@@ -1,4 +1,4 @@
-defmodule Notsense.Mixfile do
+defmodule RandomAd.Mixfile do
   use Mix.Project
 
   def project do
