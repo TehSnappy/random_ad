@@ -1,19 +1,11 @@
 defmodule RandomAd.RandomAdView do
   use RandomAd.Web, :view
 
-  def render("ad_tower.html", %{}) do
-    if (Application.get_env(:pp_web, :live_ads)) do
-      render("adsense_tower.html", %{})
-    else
-      tag(:img, src: "/images/tower_ad.jpg")
-    end
+  def render(path, %{}) do
+    :random.seed(:erlang.now)
+    {:ok, pages} = File.ls(path)
+    shown_page = Enum.take_random(pages, 1)
+    raw(File.read!("#{path}/#{shown_page}"))
   end
 
-  def render("ad_block.html", %{}) do
-    if (Application.get_env(:pp_web, :live_ads)) do
-      render("adsense_block.html", %{})
-    else
-      tag(:img, src: "/images/block_ad.jpg")
-    end
-  end
 end
