@@ -3,8 +3,8 @@ defmodule RandomAd.Mixfile do
 
   def project do
     [app: :random_ad,
-     version: "0.1.2",
-     elixir: "~> 1.3.1",
+     version: "0.2.2",
+     elixir: "~> 1.3",
      elixirc_paths: elixirc_paths(Mix.env),
      deps: deps,
      name: "RandomAd",
