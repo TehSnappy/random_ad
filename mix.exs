@@ -6,12 +6,12 @@ defmodule RandomAd.Mixfile do
      version: "0.2.2",
      elixir: "~> 1.3",
      elixirc_paths: elixirc_paths(Mix.env),
-     deps: deps,
+     deps: deps(),
      name: "RandomAd",
      source_url: "https://github.com/tehsnappy/random_ad",
      test_coverage: [tool: Coverex.Task, coveralls: true],
-     description: description,
-     package: package]
+     description: description(),
+     package: package()]
   end
 
   # Configuration for the OTP application
