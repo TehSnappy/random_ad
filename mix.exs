@@ -21,9 +21,9 @@ defmodule RandomAd.Mixfile do
 
   defp deps do
     [
-      {:phoenix, "~> 1.2.0", only: :dev},
-      {:phoenix_haml, "~> 0.2.1", only: :dev},
-      {:phoenix_html, "~> 2.3", only: :dev}
+      {:phoenix, "~> 1.2.0"},
+      {:phoenix_haml, "~> 0.2.1"},
+      {:phoenix_html, "~> 2.3"}
     ]
   end
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
