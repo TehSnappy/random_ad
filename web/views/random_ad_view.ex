@@ -3,9 +3,13 @@ defmodule RandomAd.RandomAdView do
 
   def render(path) do
     :random.seed(:erlang.now)
-    {:ok, pages} = File.ls(path)
-    shown_page = Enum.take_random(pages, 1)
-    raw(File.read!("#{path}/#{shown_page}"))
+    case File.ls(path) do
+      {:ok, pages} ->
+        shown_page = Enum.take_random(pages, 1)
+        raw(File.read!("#{path}/#{shown_page}"))
+      true ->
+        "images not found at #{path}"
+    end
   end
 
 end
