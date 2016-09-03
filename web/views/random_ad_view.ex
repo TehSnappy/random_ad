@@ -9,7 +9,7 @@ defmodule RandomAd.RandomAdView do
       {:ok, pages} ->
         shown_page = Enum.take_random(pages, 1)
         raw(File.read!("#{path}/#{shown_page}"))
-      true ->
+      _ ->
         "images not found at #{path}"
     end
   end
