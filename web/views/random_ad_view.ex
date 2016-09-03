@@ -1,7 +1,7 @@
 defmodule RandomAd.RandomAdView do
   use RandomAd.Web, :view
 
-  def render(path, %{}) do
+  def render(path) do
     :random.seed(:erlang.now)
     {:ok, pages} = File.ls(path)
     shown_page = Enum.take_random(pages, 1)
