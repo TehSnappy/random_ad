@@ -1,6 +1,8 @@
 defmodule RandomAd.RandomAdView do
   use RandomAd.Web, :view
 
+
+
   def render(path) do
     :random.seed(:erlang.now)
     case File.ls(path) do
