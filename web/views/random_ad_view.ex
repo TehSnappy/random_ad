@@ -8,7 +8,7 @@ defmodule RandomAd.RandomAdView do
       nil ->     
         "path not set"
 
-      {path} ->
+      path ->
         :random.seed(:os.timestamp)
         case File.ls(path) do
           {:ok, pages} ->
