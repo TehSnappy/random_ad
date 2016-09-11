@@ -5,7 +5,10 @@ defmodule RandomAd.RandomAdView do
 
   def render_random do
     case Application.get_env(:random_ad, :ad_path) do
-      {:ok, path} ->
+      nil ->     
+        "path not set"
+
+      {path} ->
         :random.seed(:os.timestamp)
         case File.ls(path) do
           {:ok, pages} ->
@@ -14,8 +17,6 @@ defmodule RandomAd.RandomAdView do
           reason ->
             "images not found at #{path}, #{reason}"
         end
-      _ ->     
-        "path not set"
     end
   end
 
