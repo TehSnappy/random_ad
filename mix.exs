@@ -4,7 +4,7 @@ defmodule RandomAd.Mixfile do
   def project do
     [app: :random_ad,
      version: "0.9.0",
-     elixir: "~> 1.3.1",
+     elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      deps: deps(),
      name: "RandomAd",
@@ -21,9 +21,7 @@ defmodule RandomAd.Mixfile do
 
   defp deps do
     [
-      {:phoenix, "~> 1.2.0"},
-      {:phoenix_haml, "~> 0.2.1"},
-      {:phoenix_html, "~> 2.3"}
+      {:phoenix, "~> 1.0"},
     ]
   end
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
