@@ -9,7 +9,8 @@ defmodule RandomAd.Web do
       import Phoenix.Controller, only: [view_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
+      import Phoenix.HTML
+      import Phoenix.HTML.Form
     end
   end
 

@@ -9,7 +9,6 @@ defmodule RandomAd.RandomAdView do
         "path not set"
 
       path ->
-        :random.seed(:os.timestamp)
         case File.ls(path) do
           {:ok, pages} ->
             shown_page = Enum.take_random(pages, 1)
